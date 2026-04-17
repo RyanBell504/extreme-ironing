@@ -1,0 +1,59 @@
+{
+    "menu":[
+        {
+            "title": "home",
+            "slug": "home"
+        },
+        {
+            "title": "about",
+            "slug": "about",
+            "children": [
+                {
+                    "title": "What is extreme ironing?",
+                    "slug": "what-is-extreme-ironing"
+                },
+                {
+                    "title": "Mission statement",
+                    "slug": "mission-statement"
+                }
+            ]
+        },
+        {
+            "title": "contact",
+            "slug": "contact"
+        },
+        {
+            "title": "Schedule",
+            "slug": "schedule"
+        },
+        {
+            "title": "Team",
+            "slug": "team",
+             "children": [
+                {
+                    "title": "Players",
+                    "slug": "players"
+                },
+                {
+                    "title": "rankings",
+                    "slug": "rankings"
+                }
+            ]
+        }
+    ],
+    "images": [
+        {
+            "url": "https://coolofthewild.com/wp-content/uploads/2016/05/Rock-climbing-380x230.jpg",
+            "alt": "Extreme Ironing Event"
+        },
+        {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Highlander411_extreme_ironing.jpg/250px-Highlander411_extreme_ironing.jpg",
+            "alt": "Extreme Ironing Event"
+        },
+        {
+            "url": "https://theolballgame.com/wp-content/uploads/2016/10/extreme-ironing-04.jpg?w=640",
+            "alt": "Extreme Ironing Event"
+        }
+
+    ]
+}
