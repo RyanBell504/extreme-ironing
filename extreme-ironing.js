@@ -8,6 +8,16 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./ironing-nav-bar.js";
 import "./Ironing-slide-show.js"
 import "./about-ironing.js";
+import "./ironing-calendar.js";
+import "./ironing-teams.js";
+import "./ironing-player-info.js";
+import "./ironing-ranking.js";
+import "./ironing-schedule.js";
+import "./contact-us.js";
+import "./past-events.js";
+import "./ironing-social-links.js";
+import "./ironing-stats.js";
+
 
 export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
 
@@ -19,6 +29,7 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
     super();
     this.menu = [];
     this.images = [];
+    this.eventList = [];
     this.activePage = 'home';
   }
 
@@ -28,6 +39,7 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       menu: { type: Array },
       activePage: { type: String },
+      eventList: { type: Array },
       images: { type: Array }
     };
   }
@@ -39,7 +51,7 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        background-color: light-dark(var(--ddd-theme-default-slateMaxLight), (var(--ddd-theme-default-slateMaxDark)));       
         font-family: var(--ddd-font-navigation);
       }
     `];
@@ -59,14 +71,41 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
     switch (this.activePage) {
       case "home":
         return html`<h1>Board To Be Wild</h1>
-      <ironing-slide-show .images="${this.images}"></ironing-slide-show>`;
+        <img src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo" border="0" j>
+      <div class="slide-show-container">
+      <ironing-slide-show .images="${this.images}"></ironing-slide-show>
+      </div>
+      <ironing-schedule .events="${this.eventList}" limit="5"></ironing-schedule>`;
       case "about":
-        return html`<h1>About Page</h1>
-        <p>This is the about page for our extreme ironing leage Board to be wild.</p>`;
-        case "what-is-extreme-ironing":
+        return html`<h1>About Us</h1>
+        <p>Welcome to board to be wild, an extreme ironing league!</p>
+        <img src="https://i0.wp.com/www.paigeandjosh.com/wp-content/uploads/2010/01/2003ExtremeIroning.jpg?ssl=1" alt="Extreme Ironing Image" border="0">
+        <p>This is a league that hosts extreme ironing competitions around the world.</p>
+          <p>Extreme ironing is a sport where participants take ironing boards to remote locations and iron items of clothing.</p>
+          If you are interested in learning more about extreme ironing, check out the "What is Extreme Ironing?" page for more information.</p>
+        </p>`;
+      case "what-is-extreme-ironing":
         return html`<about-ironing></about-ironing>`;
+      case "mission-statement":
+          return html`<h1>Mission Statement</h1>
+          <p>Our mission at Board To Be Wild is to promote the sport of extreme ironing and provide a platform for extreme ironing enthusiasts to connect, compete, and share their passion for this unique and thrilling activity. We strive to create a welcoming and inclusive community where individuals of all skill levels can come together to celebrate the art of extreme ironing and push the boundaries of what is possible with an ironing board.</p>`;
       case "contact":
-        return html`<h1>Contact Page</h1>`;
+        return html`<contact-us></contact-us>
+        <ironing-social-links></ironing-social-links>`;
+      case "schedule":
+        return html`<ironing-calendar .events="${this.eventList}"></ironing-calendar>`;
+      case "team":
+        return html`<ironing-teams .teams="${this.teams}"></ironing-teams>`;
+      case "players":
+        return html`<ironing-player-info .teams="${this.teams}"></ironing-player-info>`;
+      case "rankings":
+        return html`<ironing-ranking .teams="${this.teams}"></ironing-ranking>`;
+      case "upcoming-events":
+        return html`<ironing-schedule .events="${this.eventList}"></ironing-schedule>`;
+      case "past-events":
+        return html`<past-events .events="${this.eventList}"></past-events>`;
+      case "stats":
+        return html`<ironing-stats .teams="${this.teams}"></ironing-stats>`;
       default:
         return html`<h1>Page Not Found</h1>`;
     }
@@ -87,6 +126,13 @@ firstUpdated() {
       .then(data => {
         this.menu = data.menu || [];
         this.images = data.images || [];
+        this.teams = data.teams || [];
+        this._updateRote();
+      })
+       fetch("/api/scheduledata.js") //     /api/scheduledata.js for vercel , ./scheduledata.json for npm
+      .then(r => r.json())
+      .then(scheduledata => {
+        this.eventList = scheduledata.events || [];
         this._updateRote();
       })
   }

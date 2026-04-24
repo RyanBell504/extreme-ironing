@@ -52,9 +52,9 @@ export class ironingSlideShow extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     const current = this.images && this.images.length > 0 ? this.images[this.index] : null;
     return html`
-    <h1>Recent Pictures from Extreme Ironing Events</h1>
+    <h2>Recent Pictures from Events</h2>
     <div class="slide-container">
-        <img src="${current.url}">
+      ${current ? html`<img src="${current.url}" alt="${current.alt}">` : html`<p>No images available.</p>`}
     </div>
     <div class="controls">
         <button @click="${() => this._changeSlide('prev')}">Previous</button>

@@ -11,10 +11,12 @@ export class ironingTeams extends DDDSuper(I18NMixin(LitElement)) {
   
   constructor() {
     super();
+    this.teams = [];
   }
   static get properties() {
     return {
       ...super.properties,
+      teams: { type: Array }
     };
   }
   
@@ -30,7 +32,15 @@ export class ironingTeams extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
     <div>
-        <h1>Teams</h1>
+      <h1>Competing Teams</h1>
+      <div>
+        ${this.teams.map(team => html`
+          <div>
+            <h2>${team.name}</h2>
+            <p>${team.description}</p>
+          </div>
+        `)}
+      </div>
     </div>
       `;
   }

@@ -30,7 +30,10 @@ export class ironingSocialLinks extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
     <div>
-        <h1>Nav Bar</h1>
+        <h1>Connect with us!</h1>
+        <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/3840px-Instagram_logo_2016.svg.png" alt="Instagram" width="50" height="50" @click="${() => window.open('https://hax.psu.edu/', '_blank')}">
+        <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/1280px-X_logo.jpg" alt="Twitter" width="50" height="50" @click="${() => window.open('https://hax.psu.edu/', '_blank')}">
+        <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/500px-Facebook_Logo_%282019%29.png" alt="Facebook" width="50" height="50" @click="${() => window.open('https://hax.psu.edu/', '_blank')}">
     </div>
       `;
   }

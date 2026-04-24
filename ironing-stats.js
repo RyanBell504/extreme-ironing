@@ -30,7 +30,18 @@ export class ironingStats extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
     <div>
-        <h1>Stats</h1>
+        <h1>Player Stats</h1>
+          <div class="player-container">
+          ${this.teams.map(team => {
+          return team.players.map(player => html`
+            <div class="player-card">
+              <h1>${player.name}</h1>
+              <p>Clothes Ironed: ${player["clothes ironed"]}</p>
+              <p>Water Used: ${player["water used"]}</p>
+            </div>
+          `);
+        })}
+      </div>
     </div>
       `;
   }

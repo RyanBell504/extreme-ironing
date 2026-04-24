@@ -1,59 +1,256 @@
-{
-    "menu":[
-        {
-            "title": "home",
-            "slug": "home"
-        },
-        {
-            "title": "about",
-            "slug": "about",
-            "children": [
-                {
-                    "title": "What is extreme ironing?",
-                    "slug": "what-is-extreme-ironing"
-                },
-                {
-                    "title": "Mission statement",
-                    "slug": "mission-statement"
-                }
-            ]
-        },
-        {
-            "title": "contact",
-            "slug": "contact"
-        },
-        {
-            "title": "Schedule",
-            "slug": "schedule"
-        },
-        {
-            "title": "Team",
-            "slug": "team",
-             "children": [
-                {
-                    "title": "Players",
-                    "slug": "players"
-                },
-                {
-                    "title": "rankings",
-                    "slug": "rankings"
-                }
-            ]
-        }
-    ],
-    "images": [
-        {
-            "url": "https://coolofthewild.com/wp-content/uploads/2016/05/Rock-climbing-380x230.jpg",
-            "alt": "Extreme Ironing Event"
-        },
-        {
-            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Highlander411_extreme_ironing.jpg/250px-Highlander411_extreme_ironing.jpg",
-            "alt": "Extreme Ironing Event"
-        },
-        {
-            "url": "https://theolballgame.com/wp-content/uploads/2016/10/extreme-ironing-04.jpg?w=640",
-            "alt": "Extreme Ironing Event"
-        }
-
-    ]
-}
+    {
+        "menu":[
+            {
+                "id": "home",
+                "title": "Home",
+                "author": "Ryan Bell",
+                "description": "home page for extreme ironing",
+                "license": "CC-BY-SA",
+                "metadat":{},
+                "slug": "home"
+            },
+            {
+                "id": "about",
+                "title": "About ▾",
+                "author": "Ryan Bell",
+                "description": "about page for extreme ironing",
+                "license": "CC-BY-SA",
+                "metadat":{},
+                "slug": "about",
+                "children": [
+                    {
+                        "id": "about",
+                        "indent": "1",
+                        "location": "about/about",
+                        "slug": "about",
+                        "order": "1",
+                        "parent": "about",
+                        "title": "About Us",
+                        "description": "An introduction to the sport of extreme ironing.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "what-is-extreme-ironing",
+                        "indent": "1",
+                        "location": "about/what-is-extreme-ironing",
+                        "slug": "what-is-extreme-ironing",
+                        "order": "1",
+                        "parent": "about",
+                        "title": "What is Extreme Ironing?",
+                        "description": "An introduction to the sport of extreme ironing.",
+                        "metadat":{}
+                    
+                    },
+                    {
+                        "id": "mission-statement",
+                        "indent": "1",
+                        "location": "about/mission-statement",
+                        "slug": "mission-statement",
+                        "order": "2",
+                        "parent": "about",
+                        "title": "Mission Statement",
+                        "description": "Our mission and values.",
+                        "metadat":{}
+                    }
+                ]
+            },
+            {
+                "id": "schedule",
+                "title": "Schedule ▾",
+                "author": "Ryan Bell",
+                "description": "schedule page for extreme ironing",
+                "license": "CC-BY-SA",
+                "metadat":{},
+                "slug": "schedule",
+                "children": [
+                    {
+                        "id": "schedule",
+                        "indent": "1",
+                        "location": "schedule/schedule",
+                        "slug": "schedule",
+                        "order": "1",
+                        "parent": "schedule",
+                        "title": "Schedule Page",
+                        "description": "Overview of the extreme ironing schedule.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "upcoming-events",
+                        "indent": "1",
+                        "location": "schedule/upcoming-events",
+                        "slug": "upcoming-events",
+                        "order": "1",
+                        "parent": "schedule",
+                        "title": "Upcoming Events",
+                        "description": "List of upcoming extreme ironing events.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "past-events",
+                        "indent": "1",
+                        "location": "schedule/past-events",
+                        "slug": "past-events",
+                        "order": "2",
+                        "parent": "schedule",
+                        "title": "Past Events",
+                        "description": "Recap of past extreme ironing events.",
+                        "metadat":{}
+                    }
+                ]
+            },
+            {
+                "id": "team",
+                "title": "Teams ▾",
+                "author": "Ryan Bell",
+                "description": "team page for extreme ironing",
+                "license": "CC-BY-SA",
+                "metadat":{},
+                "slug": "team",
+                "children": [
+                    {
+                        "id": "team",
+                        "indent": "1",
+                        "location": "team/team",
+                        "slug": "team",
+                        "order": "1",
+                        "parent": "team",
+                        "title": "Team Page",
+                        "description": "Overview of extreme ironing teams.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "rankings",
+                        "indent": "1",
+                        "location": "team/rankings",
+                        "slug": "rankings",
+                        "order": "2",
+                        "parent": "team",
+                        "title": "Team Rankings",
+                        "description": "Current team rankings.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "players",
+                        "indent": "1",
+                        "location": "team/players",
+                        "slug": "players",
+                        "order": "1",
+                        "parent": "team",
+                        "title": "Players",
+                        "description": "List of team players.",
+                        "metadat":{}
+                    },
+                    {
+                        "id": "stats",
+                        "indent": "1",
+                        "location": "team/stats",
+                        "slug": "stats",
+                        "order": "3",
+                        "parent": "team",
+                        "title": "Player Stats",
+                        "description": "Team and player statistics.",
+                        "metadat":{}
+                    }
+                ]
+            },
+               {
+                "id": "contact",
+                "title": "Contact Us",
+                "author": "Ryan Bell",
+                "description": "contact page for extreme ironing",
+                "license": "CC-BY-SA",
+                "metadat":{},
+                "slug": "contact"
+            }
+        ],
+        "images": [
+            {
+                "url": "https://coolofthewild.com/wp-content/uploads/2016/05/Rock-climbing-380x230.jpg",
+                "alt": "Extreme Ironing Event"
+            },
+            {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Highlander411_extreme_ironing.jpg/250px-Highlander411_extreme_ironing.jpg",
+                "alt": "Extreme Ironing Event"
+            },
+            {
+                "url": "https://theolballgame.com/wp-content/uploads/2016/10/extreme-ironing-04.jpg?w=640",
+                "alt": "Extreme Ironing Event"
+            },
+            {
+                "url": "https://i.ibb.co/QF3hzxvp/marioironing.jpg",
+                "alt": "Extreme Ironing Event"
+            },
+            {
+                "url": "https://i.ibb.co/8LGhq8jz/moonironing.jpg",
+                "alt": "Extreme Ironing Event"
+            }
+        ],
+        "teams": [
+            {
+                "name": "Team Iron Masters",
+                "id": "team-iron-masters",
+                "description": "A team of highly skilled extreme ironers who have won multiple championships.",
+                "rank": 1,
+                "players": [
+                    {
+                        "name": "John Doe",
+                        "position": "Captain",
+                        "rank": 1,
+                        "clothes ironed": "500",
+                        "water used": "1000 liters"
+                    },
+                    {
+                        "name": "Jane Smith",
+                        "position": "Vice Captain",
+                        "rank": 2,
+                        "clothes ironed": "450",
+                        "water used": "900 liters"
+                    }
+                ]
+            },
+            {
+                "name": "The Wrinkle Warriors",
+                "id": "the-wrinkle-warriors",
+                "description": "A team of extreme ironing enthusiasts who are always ready to take on new challenges.",
+                "rank": 2,
+                "players": [
+                    {
+                        "name": "Alice Johnson",
+                        "position": "Captain",
+                        "rank": 1,
+                        "clothes ironed": "400",
+                        "water used": "800 liters"
+                    },
+                    {
+                        "name": "Bob Brown",
+                        "position": "Vice Captain",
+                        "rank": 2,
+                        "clothes ironed": "350",
+                        "water used": "700 liters"
+                    }
+                ]
+            },
+            {
+                "name": "Pressing Matters",
+                "id": "pressing-matters",
+                "description": "A team known for their innovative ironing techniques and creative approaches to extreme ironing.",
+                "rank": 3,
+                "players": [
+                    {
+                        "name": "Charlie Davis",
+                        "position": "Captain",
+                        "rank": 1,
+                        "clothes ironed": "300",
+                        "water used": "600 liters"
+                    },
+                    {
+                        "name": "Diana Evans",
+                        "position": "Vice Captain",
+                        "rank": 2,
+                        "clothes ironed": "250",
+                        "water used": "500 liters"
+                    }
+                ]
+            }
+        ]
+    }

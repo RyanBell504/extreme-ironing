@@ -11,10 +11,12 @@ export class ironingRanking extends DDDSuper(I18NMixin(LitElement)) {
   
   constructor() {
     super();
+    this.teams = [];
   }
   static get properties() {
     return {
       ...super.properties,
+      teams: { type: Array }
     };
   }
   
@@ -28,10 +30,20 @@ export class ironingRanking extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   render() {
+    const sortedTeams = [...this.teams].sort((a, b) => a.rank - b.rank);
     return html`
     <div>
       <nav> 
-        
+        <h1>Rankings</h1> 
+        <div>
+          ${sortedTeams.map(team => html`
+            <div>
+              <h1>Rank: ${team.rank}</h1>
+              <h2>${team.name}</h2>
+              <p>${team.description}</p>
+            </div>
+          `)}
+        </div>
       </nav>
     </div>
       `;

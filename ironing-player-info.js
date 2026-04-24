@@ -11,10 +11,12 @@ export class ironingPlayerInfo extends DDDSuper(I18NMixin(LitElement)) {
   
   constructor() {
     super();
+    this.teams = [];
   }
   static get properties() {
     return {
       ...super.properties,
+      teams: { type: Array }
     };
   }
   
@@ -27,12 +29,22 @@ export class ironingPlayerInfo extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
-  render() {
+render() {
     return html`
-    <div>
-        <h1>Player info</h1>
-    </div>
-      `;
+      <h1>League Players</h1>
+      <div class="player-container">
+        ${this.teams.map(team => {
+          return team.players.map(player => html`
+            <div class="player-card">
+              <h1>${player.name}</h1>
+              <div class="team-name">${team.name}</div>
+              <p>Position: ${player.position}</p>
+              <p>Team Rank: ${player.rank}</p>
+            </div>
+          `);
+        })}
+      </div>
+    `;
   }
 }
 globalThis.customElements.define(ironingPlayerInfo.tag, ironingPlayerInfo);

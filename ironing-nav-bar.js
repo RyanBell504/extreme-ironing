@@ -55,6 +55,10 @@ export class ironingNavBar extends DDDSuper(I18NMixin(LitElement)) {
         flex-direction: column;
         gap: 5px;
       }
+      input {
+        max-height: 70px;
+        width: auto;
+      }
       nav li:hover .dropdown {
         display: block;
       }
@@ -64,6 +68,7 @@ export class ironingNavBar extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
     <nav> 
+      <input type="image" src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo" border="0" @click="${(e) => this._handleClick(e, 'home')}">
       <ul>  
         ${this.menu.map(link => html`
           <li>
