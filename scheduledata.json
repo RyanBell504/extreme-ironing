@@ -2,63 +2,78 @@
      "events": [
         {
             "date": "2026-04-10",
-            "title": "Extreme Ironing Japan"
+            "title": "Extreme Ironing Japan",
+            "picture": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png"
         },
         {
             "date": "2026-04-19",
-            "title": "Extreme Ironing Europe"
+            "title": "Extreme Ironing Europe",
+            "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/European_flag%2C_incorrect_star_rotation.svg/250px-European_flag%2C_incorrect_star_rotation.svg.png"
         },
         {
-            "date": "2026-05-22",
-            "title": "Extreme Ironing North America"
+            "date": "2026-05-02",
+            "title": "Extreme Ironing North America",
+            "picture": "https://www.flagcolorcodes.com/data/flag-of-the-united-states.png"
         },
         {
             "date": "2026-05-04",
-            "title": "The Perma-Press Precipice"
+            "title": "The Perma-Press Precipice",
+            "picture": "https://img.pastemagazine.com/wp-content/avuploads/2022/01/15020713/3ee152b875bf5fd98bbe84c9eec19747.jpg"
         },
         {
             "date": "2026-05-15",
-            "title": "Avalanche Apron Open"
+            "title": "Avalanche Apron Open",
+            "picture": "https://cdn1.dangerousminds.net/uploads/7/images/extreme-ironing-20080617-093819.jpg"
         },
         {
             "date": "2026-05-28",
-            "title": "The Sky-Dive Seam Stress"
+            "title": "The Sky-Dive Seam Stress",
+            "picture": "https://miro.medium.com/0*Ud7m3wrwzCQAt1Za.jpg"
         },
         {
             "date": "2026-06-02",
-            "title": "Raging River Raglan"
+            "title": "Raging River Raglan",
+            "picture": "https://miro.medium.com/v2/resize:fit:1000/0*sO9bHiMSh64Jf2Z8.jpg"
         },
         {
             "date": "2026-06-14",
-            "title": "The Monsoon Mesh-Down"
+            "title": "The Monsoon Mesh-Down",
+            "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPPlA5MOQtdlcVm7aR9BPIxihy9z05EuT7SA&s"
         },
         {
             "date": "2026-06-25",
-            "title": "Cliffside Collar Combat"
+            "title": "Cliffside Collar Combat",
+            "picture": "https://i0.wp.com/www.paigeandjosh.com/wp-content/uploads/2010/01/2003ExtremeIroning.jpg?ssl=1"
         },
         {
             "date": "2026-07-07",
-            "title": "The Deep-End Denim Dive"
+            "title": "The Deep-End Denim Dive",
+            "picture": "https://mikekelseyadventures.wordpress.com/wp-content/uploads/2023/03/dsc_0333.jpg"
         },
         {
             "date": "2026-07-19",
-            "title": "Magma-Edge Manicuring"
+            "title": "Magma-Edge Manicuring",
+            "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3Qybaw8xrnPI6o_5NcZx76qApxfj48AxVg&s"
         },
         {
             "date": "2026-07-30",
-            "title": "The High-Tide Hemline"
+            "title": "The High-Tide Hemline",
+            "picture": "https://coolofthewild.com/wp-content/uploads/2016/05/climbing.jpg"
         },
         {
             "date": "2026-08-05",
-            "title": "Glacier Gingham Games"
+            "title": "Glacier Gingham Games",
+            "picture": "https://coolofthewild.com/wp-content/uploads/2016/05/Skiing.jpg"
         },
         {
             "date": "2026-08-16",
-            "title": "The Desert Dust-Off"
+            "title": "The Desert Dust-Off",
+            "picture": "https://static1.squarespace.com/static/57749cddf7e0ab3b882b17eb/5775e9b42994cabcbb108453/676466c91e1e4b128fac9fe2/1735407414135/Columbia%2C+Vantage+-+Cliffside+extreme+ironing+5-20240805.jpg?format=1500w"
         },
         {
             "date": "2026-08-29",
-            "title": "Hurricane Handkerchief Heist"
+            "title": "Hurricane Handkerchief Heist",
+            "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkzbWRbiz6dlh0uv1FKePdN-fWhZnm5qLAmg&s"
         }
     ]
 }

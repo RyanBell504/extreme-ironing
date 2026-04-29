@@ -23,9 +23,57 @@ export class pastEvents extends DDDSuper(I18NMixin(LitElement)) {
   static get styles() {
     return [super.styles,
     css`
-      :host {
+         :host {
         display: block;
-        margin: var(--ddd-spacing-large);   
+        max-width: 800px;
+        margin: var(--ddd-spacing-8) auto;
+        padding: 0 var(--ddd-spacing-4);
+        font-family: var(--ddd-font-navigation);
+      }
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: var(--ddd-ls-72-lg);
+        margin-bottom: var(--ddd-spacing-6);
+      }
+      .schedule-list
+      {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ddd-spacing-3);
+      }
+      .event-item
+      {
+         padding: var(--ddd-spacing-4);
+        border: var(--ddd-border-xs);
+        border-color: light-dark(black, white);
+        border-radius: var(--ddd-radius-sm);
+        display: flex;
+        align-items: center;
+        gap: var(--ddd-spacing-5);
+        box-shadow: var(--ddd-shadow-sm);
+        transition: all 0.3s ease; 
+        cursor: default;
+        background-color: var(--ddd-theme-default-potential0);
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .event-item:hover
+      {
+        transform: translateY(-3px);
+        background-color: light-dark(var(--ddd-theme-default-pughBlue), var(--ddd-theme-default-beaver70));
+      }
+      .event-picture
+      {
+        width: 70px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: var(--ddd-radius-sm);
+      }
+      .event-item strong, .event-item span {
+        margin: var(--ddd-spacing-0);
+        flex: 1;
+        text-align: left;
       }
     `];
   }
@@ -35,11 +83,12 @@ export class pastEvents extends DDDSuper(I18NMixin(LitElement)) {
     const upcomingEvents = this.events.filter(event => event.date <= today);
     return html`
     <h1>Past Events</h1>
-    <div>
+    <div class="schedule-list">
         ${upcomingEvents.length > 0 
           ? upcomingEvents.map(event => html`
-            <div>
-              <strong>${event.title}</strong> - ${event.date}
+            <div class="event-item">
+              <strong>${event.title}</strong> <span>${event.date}</span> 
+              <img class="event-picture" src="${event.picture}" alt="${event.title} logo">
             </div>
           `)
           : html`<p>No upcoming events.</p>`

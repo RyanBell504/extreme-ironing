@@ -27,24 +27,62 @@ export class ironingSlideShow extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
+       margin: var(--ddd-spacing-4) auto;
+       text-align: center;
+       max-width: 800px;
+      }
+      h2{
+        font-family: var(--ddd-font-navigation);
+        color: light-dark(var(--ddd-theme-default-coalyGray), var(--ddd-theme-default-shrineMaxLight));
       }
       .slide-container {
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: var(--ddd-radius-md);
+        box-shadow: var(--ddd-shadow-md);
+        margin-bottom: var(--ddd-spacing-4);
+        aspect-ratio: 16 / 9;
       }
+  
       img {
-        width: 20%;
-        max-height: 400px;
-        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        padding: var(--ddd-spacing-3);
-        box-sizing: border-box;
       }
       .controls {
-        display: block;
+        display: flex;
+        justify-content: center;
+        gap: var(--ddd-spacing-4);
       }
       button {
-        margin: 0 10px;
-        padding: 10px 20px;
+        cursor: pointer;
+        background-color: light-dark(var(--ddd-theme-default-slateLight), var(--ddd-theme-default-nittanyNavy));
+        border-radius: var(--ddd-radius-sm);
+        padding: var(--ddd-spacing-3) var(--ddd-spacing-6);
+        width: 100px;
+        font-weight: var(--ddd-font-weight-bold);
+        }
+       .line {
+        width: 100%;
+        height: 2px;
+        background-color: var(--ddd-theme-default-skyBlue);
+        margin: var(--ddd-spacing-3);  
+        justify-content: center;
+        display: flex;
+      }
+      button:hover{
+        background-color: light-dark(var(--ddd-theme-default-pughBlue), var(--ddd-theme-default-beaver70));
+      }
+      @media (max-width: 600px) {
+        .slide-container {
+          aspect-ratio: 4 / 3;
+        }
+        button {
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
+          font-size: var(--ddd-font-size-4xs);
+        }
       }
     `];
   }
@@ -52,6 +90,7 @@ export class ironingSlideShow extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     const current = this.images && this.images.length > 0 ? this.images[this.index] : null;
     return html`
+    <div class=line></div>
     <h2>Recent Pictures from Events</h2>
     <div class="slide-container">
       ${current ? html`<img src="${current.url}" alt="${current.alt}">` : html`<p>No images available.</p>`}

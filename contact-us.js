@@ -24,13 +24,18 @@ export class contactUs extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
       }
+      h1{
+        display:flex;
+        text-align: center;
+        justify-content: center;
+      }
     `];
   }
 
   render() {
     return html`
     <div>
-        <h1>Contact Us</h1>
+        <h1>Contact Us!</h1>
         <p>If you have any questions or would like to get in touch with us, please email us at email@boardtobewild.com</p>
         <p>Our address is 123 Ironing Lane, Extreme City, EC 12345</p>
         <p>We look forward to hearing from you!</p>

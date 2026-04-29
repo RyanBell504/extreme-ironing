@@ -17,6 +17,7 @@ import "./contact-us.js";
 import "./past-events.js";
 import "./ironing-social-links.js";
 import "./ironing-stats.js";
+import "./ironing-footer.js";
 
 
 export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
@@ -40,7 +41,8 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
       menu: { type: Array },
       activePage: { type: String },
       eventList: { type: Array },
-      images: { type: Array }
+      images: { type: Array },
+      teams: {type: Array}
     };
   }
 
@@ -51,9 +53,33 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: light-dark(var(--ddd-theme-default-slateMaxLight), (var(--ddd-theme-default-slateMaxDark)));       
+        background-color: light-dark(var(--ddd-theme-default-slateLight), var(--ddd-theme-default-nittanyNavy));
         font-family: var(--ddd-font-navigation);
       }
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding-left: var(--ddd-spacing-4);
+      }
+       .photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+      }
+      h1{
+        display: flex;
+        justify-content: center;
+      }
+      h2{
+        display: flex;
+        justify-content: center;
+      }
+      
     `];
   }
 
@@ -64,25 +90,29 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
       @route-changed="${this._handleRouteChange}"
       ></ironing-nav-bar>
       ${this.renderActivePage()}
+      <ironing-footer></ironing-footer>
        `;
   }
   
   renderActivePage() {
     switch (this.activePage) {
       case "home":
-        return html`<h1>Board To Be Wild</h1>
-        <img src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo" border="0" j>
+        return html`
+        <div class=logo>   
+            <img src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo">
+        </div>
+        <h1>Welcome to Board to Be Wild</h1>
+        <h2>Extreme Ironing League</h2>
       <div class="slide-show-container">
       <ironing-slide-show .images="${this.images}"></ironing-slide-show>
       </div>
       <ironing-schedule .events="${this.eventList}" limit="5"></ironing-schedule>`;
       case "about":
-        return html`<h1>About Us</h1>
-        <p>Welcome to board to be wild, an extreme ironing league!</p>
+        return html`<h1>About Board to Be Wild</h1>
+        <div class=photo>
         <img src="https://i0.wp.com/www.paigeandjosh.com/wp-content/uploads/2010/01/2003ExtremeIroning.jpg?ssl=1" alt="Extreme Ironing Image" border="0">
-        <p>This is a league that hosts extreme ironing competitions around the world.</p>
-          <p>Extreme ironing is a sport where participants take ironing boards to remote locations and iron items of clothing.</p>
-          If you are interested in learning more about extreme ironing, check out the "What is Extreme Ironing?" page for more information.</p>
+        </div>
+        <p>This is an Extreme Ironing league that hosts Extreme Ironing competitions around the world. Extreme ironing is a sport where participants take ironing boards to remote locations and iron items of clothing. If you are interested in learning more about extreme ironing, check out the "What is Extreme Ironing?" page for more information.</p>
         </p>`;
       case "what-is-extreme-ironing":
         return html`<about-ironing></about-ironing>`;
@@ -121,7 +151,7 @@ export class ExtremeIroning extends DDDSuper(I18NMixin(LitElement)) {
 firstUpdated() {
       const urlParms = new URLSearchParams(window.location.search);
       this.activePage = urlParms.get('page') || this.activePage;
-      fetch("/api/data.js") //     /api/data.js for vercel , ./data.json for npm
+      fetch("/api/menu.js") //     /api/menu.js for vercel , ./data.json for npm
       .then(r => r.json())
       .then(data => {
         this.menu = data.menu || [];
@@ -129,7 +159,7 @@ firstUpdated() {
         this.teams = data.teams || [];
         this._updateRote();
       })
-       fetch("/api/scheduledata.js") //     /api/scheduledata.js for vercel , ./scheduledata.json for npm
+       fetch("/api/schedule.js") //     /api/schedule.js for vercel , ./scheduledata.json for npm
       .then(r => r.json())
       .then(scheduledata => {
         this.eventList = scheduledata.events || [];

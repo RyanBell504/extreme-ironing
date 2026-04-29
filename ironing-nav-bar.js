@@ -27,33 +27,72 @@ export class ironingNavBar extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         width: 100%;
-        background-color: var(--ddd-theme-primary);
-        color: var(--ddd-theme-accent);
+        background-color: light-dark(var(--ddd-theme-default-pughBlue), var(--ddd-theme-default-beaver80));
         font-family: var(--ddd-font-navigation);
+        box-shadow: var(--ddd-shadow-lg);
       }
       nav {
-        background-color: var(--ddd-theme-primary);
-        color: var(--ddd-theme-accent);
         display: flex;
         align-items: center;
+        padding: 0 var(--ddd-spacing-4);
+        height: 70px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        padding-right: var(--ddd-spacing-4);
+        height: 80px;
+        flex-shrink: 0;
+      }
+      .logo:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
       }
       ul {
-        margin: 0;
-        padding: 0;
+        display: flex;
+        margin: var(--ddd-spacing-0);
+        padding: var(--ddd-spacing-0);
         list-style: none;
         flex-direction: row;
-        gap: 50px;
+        gap: var(--ddd-spacing-13);
+        flex: 1;
+      
       }
+      a {
+          color: light-dark(var(--ddd-theme-default-coalyGray), var(--ddd-theme-default-shrineMaxLight));
+          padding: 0 var(--ddd-spacing-space-6);
+          height: 100%;
+          display: flex;
+          align-items: center;
+          font-weight: var(--ddd-font-weight-bold);
+          text-transform: uppercase;
+          letter-spacing: var(--ddd-ls-72-lg);   
+          white-space: nowrap;
+        }a
+      a:hover {
+          color: var(--ddd-theme-default-limestone);
+          outline: none;
+        }
       .dropdown {
         display: none;
         position: absolute;
-        background-color: var(--ddd-theme-primary);
-        min-width: 160px;
+        background-color: light-dark(var(--ddd-theme-default-pughBlue), var(--ddd-theme-default-beaver80));
+        border-radius: var(--ddd-border-radius);
+        box-shadow: var(--ddd-shadow-md);
+        padding: var(--ddd-spacing-2) 0;
+        z-index: 1000;
       }
       .dropdown ul {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: var(--ddd-spacing-0);
+      }
+      .dropdown li a {
+        padding: var(--ddd-spacing-1);
+        justify-content: flex-start;
       }
       input {
         max-height: 70px;
@@ -62,13 +101,59 @@ export class ironingNavBar extends DDDSuper(I18NMixin(LitElement)) {
       nav li:hover .dropdown {
         display: block;
       }
+      @media (max-width: 768px) {
+        nav {
+          padding: 0 var(--ddd-spacing-2);
+          height: auto;
+          min-height: 60px;
+        }
+        .logo {
+          padding-right: var(--ddd-spacing-2);
+          height: 60px;
+        }
+        ul {
+          gap: var(--ddd-spacing-6);
+          flex-wrap: wrap;
+        }
+        a {
+          padding: 0 var(--ddd-spacing-2);
+          font-size: 0.85rem;
+          letter-spacing: var(--ddd-ls-72-sm);
+        }
+        input {
+          max-width: 45px;
+        }
+      }
+ 
+      @media (max-width: 480px) {
+        nav {
+          padding: 0 var(--ddd-spacing-1);
+          min-height: 55px;
+        }
+        .logo {
+          padding-right: var(--ddd-spacing-1);
+          height: 55px;
+        }
+        ul {
+          gap: var(--ddd-spacing-3);
+        }
+        a {
+          padding: 0 var(--ddd-spacing-1);
+          font-size: 0.75rem;
+        }
+        input {
+          max-width: 40px;
+        }
+      }
     `];
   }
 
   render() {
     return html`
     <nav> 
-      <input type="image" src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo" border="0" @click="${(e) => this._handleClick(e, 'home')}">
+      <div class="logo">
+        <input type="image" src="https://i.ibb.co/cSqRvjST/boardtobewildlogo.png" alt="Extreme Ironing League Logo" border="0" @click="${(e) => this._handleClick(e, 'home')}">
+      </div>
       <ul>  
         ${this.menu.map(link => html`
           <li>

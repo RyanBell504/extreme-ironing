@@ -70,7 +70,7 @@
                         "slug": "schedule",
                         "order": "1",
                         "parent": "schedule",
-                        "title": "Schedule Page",
+                        "title": "Event Calendar",
                         "description": "Overview of the extreme ironing schedule.",
                         "metadat":{}
                     },
@@ -191,20 +191,23 @@
                 "id": "team-iron-masters",
                 "description": "A team of highly skilled extreme ironers who have won multiple championships.",
                 "rank": 1,
+                "logo": "https://m.media-amazon.com/images/I/61fi4vDCexL.jpg",
                 "players": [
                     {
                         "name": "John Doe",
                         "position": "Captain",
+                        "picture": "https://thumbs.dreamstime.com/b/man-ironing-clothes-12948979.jpg",
                         "rank": 1,
-                        "clothes ironed": "500",
-                        "water used": "1000 liters"
+                        "clothes ironed": "400",
+                        "score": "1000"
                     },
                     {
                         "name": "Jane Smith",
                         "position": "Vice Captain",
+                        "picture": "https://media.product.which.co.uk/prod/images/original/gm-2afcf653-d966-4cda-9789-79cd1710023e-ironinglead.jpeg",
                         "rank": 2,
-                        "clothes ironed": "450",
-                        "water used": "900 liters"
+                        "clothes ironed": "359",
+                        "score": "900"
                     }
                 ]
             },
@@ -213,20 +216,23 @@
                 "id": "the-wrinkle-warriors",
                 "description": "A team of extreme ironing enthusiasts who are always ready to take on new challenges.",
                 "rank": 2,
+                "logo": "https://www.lemonslavenderandlaundry.com/wp-content/uploads/2016/11/De-Wrinkle-Clothes-Without-Iron-Wrinkly-Shirt.jpg",
                 "players": [
                     {
                         "name": "Alice Johnson",
                         "position": "Captain",
+                        "picture": "https://www.mopheads.co.uk/wp-content/uploads/2022/11/diane_resized.png",
                         "rank": 1,
-                        "clothes ironed": "400",
-                        "water used": "800 liters"
+                        "clothes ironed": "350",
+                        "score": "800"
                     },
                     {
                         "name": "Bob Brown",
                         "position": "Vice Captain",
+                        "picture": "https://thumbs.dreamstime.com/b/man-ironing-shirt-home-29651604.jpg",
                         "rank": 2,
-                        "clothes ironed": "350",
-                        "water used": "700 liters"
+                        "clothes ironed": "342",
+                        "score": "700"
                     }
                 ]
             },
@@ -235,22 +241,102 @@
                 "id": "pressing-matters",
                 "description": "A team known for their innovative ironing techniques and creative approaches to extreme ironing.",
                 "rank": 3,
+                "logo": "https://www.polti.com/media/wordpress/35977d42b8d39fa586508246c0235bc3.jpg",
                 "players": [
                     {
                         "name": "Charlie Davis",
                         "position": "Captain",
+                        "picture": "https://t4.ftcdn.net/jpg/02/93/68/53/360_F_293685386_ZvCSsAefeGw9qtjeqVvSnf62vqkZBd4b.jpg",
                         "rank": 1,
                         "clothes ironed": "300",
-                        "water used": "600 liters"
+                        "score": "600"
                     },
                     {
                         "name": "Diana Evans",
                         "position": "Vice Captain",
+                         "picture": "https://c8.alamy.com/comp/W490JX/woman-ironing-clothes-at-home-and-smiling-W490JX.jpg",
                         "rank": 2,
                         "clothes ironed": "250",
-                        "water used": "500 liters"
+                        "score": "500"
                     }
                 ]
+            },
+            
+    {
+        "name": "The High-Altitude Hems",
+        "id": "high-altitude-hems",
+        "description": "This squad specializes in vertical ironing, often seen pressing formal wear while rappelling down limestone cliffs or suspended from canyon wires.",
+        "rank": 4,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Extermeironingrivelin.jpg",
+        "players": [
+            {
+                "name": "Skyler Peak",
+                "position": "Captain",
+                "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa88PWvH2RqLOmRe6Tw3tonzr3Bjg8xI0dEw&s",
+                "rank": 3,
+                "clothes ironed": "360",
+                "score": "920"
+            },
+            {
+                "name": "Jordan Ridge",
+                "position": "Vice Captain",
+                "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGDlCSBRl1NuA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1636065664869?e=2147483647&v=beta&t=ve6vYRRr6JXYMP-qk1oJ9vGD8V4aLOsUh4PBXXi_cds",
+                "rank": 8,
+                "clothes ironed": "261",
+                "score": "610"
             }
         ]
+    },
+    {
+        "name": "Steam Streamers",
+        "id": "steam-streamers",
+        "description": "Masters of the aquatic press, the Steam Streamers handle heavy-duty denim while navigating Class IV rapids on specialized ironing rafts.",
+        "rank": 6,
+        "logo": "https://target.scene7.com/is/image/Target/GUEST_146790ba-cfb5-41ab-a281-709d5d338a6d",
+        "players": [
+            {
+                "name": "River Brooks",
+                "position": "Captain",
+                "picture": "https://www.themodestman.com/wp-content/uploads/2020/05/Ironing-101-for-Guys.jpg",
+                "rank": 5,
+                "clothes ironed": "421",
+                "score": "1,200"
+            },
+            {
+                "name": "Marina Tide",
+                "position": "Vice Captain",
+                "picture": "https://media.gettyimages.com/id/1198981437/photo/teenage-girl-ironing-her-clothes-at-home.jpg?s=170667a&w=gi&k=20&c=aJaJmnjWr7pq3cnb3eNEsSyAZ8NMOxKSTpt6kZF_45U=",
+                "rank": 12,
+                "clothes ironed": "353",
+                "score": "880"
+            }
+        ]
+    },
+    {
+        "name": "Glacier Gliders",
+        "id": "glacier-gliders",
+        "description": "Operating in sub-zero temperatures, this team is famous for using geothermal heat to maintain perfect crease lines on the Antarctic tundra.",
+        "rank": 5,
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyANV93Ss31W8G7AZEjJhsPjlsCu0Ai-YYoA&s",
+        "players": [
+            {
+                "name": "Finn Frost",
+                "position": "Captain",
+                "picture": "https://previews.123rf.com/images/bialasiewicz/bialasiewicz1402/bialasiewicz140200525/26080590-man-ironing-clothes-and-doing-daily-chores.jpg",
+                "rank": 1,
+                "clothes ironed": "210",
+                "score": "400"
+            },
+            {
+                "name": "Aurora Chill",
+                "position": "Vice Captain",
+                "picture": "https://c8.alamy.com/comp/JF9776/black-man-with-clothes-iron-JF9776.jpg",
+                "rank": 4,
+                "clothes ironed": "156",
+                "score": "350"
+            }
+        ]
+    }
+]
+        
     }
