@@ -70,10 +70,12 @@ export class ironingTeams extends DDDSuper(I18NMixin(LitElement)) {
         object-fit: cover;
         border-radius: var(--ddd-radius-sm);
       }
-       .teams-item h2, .teams-item p{
+       .team-item h2, .team-item p{
           margin: var(--ddd-spacing-0);
           flex: 1; 
           text-align: left;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       @media (max-width: 500px) {
         .team-item {
